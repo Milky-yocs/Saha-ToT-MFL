@@ -25,7 +25,6 @@ The current repository requires that the **AVE pre-trained feature slices** be p
 ```text
 .
 |- configs/AVE/        # AVE experiment configurations
-|- data/ave/           # fixed processed AVE release (images/audio/texts/index.json)
 |- models/AVE/         # AVE model definitions
 |- server/             # sync/async/hybrid servers and MMQS scheduling
 |- scripts/            # data preparation, API test, and experiment scripts

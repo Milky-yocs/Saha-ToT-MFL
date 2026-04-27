@@ -61,6 +61,29 @@ To reduce cross-machine variance, we use a fixed processed AVE release in our ex
 
 Due to differences in FFmpeg/JPEG/WAV decoding and encoding pipelines across operating systems and library versions, rebuilding AVE from raw videos may produce binary-different media files, even when labels and split definitions are identical.
 
+### Download Processed AVE Release (Required)
+
+Before running experiments, please download our processed AVE release:
+
+https://drive.google.com/drive/folders/1DIF2Lu-cUEqrUbOBvvb9jPikch18aajp?usp=sharing
+
+After download, place it at:
+
+`<repo_root>/data/ave/`
+
+Expected structure:
+
+```text
+data/ave/
+|- images/
+|- audio/
+|- texts/
+`- index.json
+```
+
+Default path used by this repository:
+- AVE index path: `./data/ave/index.json`
+
 Statistics of the processed AVE release used in this work:
 - Total samples: 4,143
 - Train / Val / Test: 3,339 / 402 / 402
@@ -69,7 +92,7 @@ Statistics of the processed AVE release used in this work:
 - Text files: 4,143
 
 All records are indexed by `index.json` and referenced with dataset-relative paths.
-For strict reproduction of reported results, use this processed AVE release directly instead of regenerating media files on a different machine.
+For strict reproduction of reported results, use this processed AVE release directly.
 
 This repository expects the AVE dataset to be prepared locally.
 

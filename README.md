@@ -6,7 +6,7 @@ This repository is the official code release and reproducibility entry for:
 
 **Staleness-Aware Hybrid Aggregation with Tree-of-Thoughts Scheduling for Multimodal Federated Learning**
 
-Authors: Yihao Pan, Kang Chen, Yang Li, Zihao Wu, Yuan Wu, Huanlai Xing.
+Authors: Yihao Pan, Kang Chen, Yang Li, Zihao Wu, Huanlai Xing, Yuan Wu.
 
 ## 2. Method Overview
 

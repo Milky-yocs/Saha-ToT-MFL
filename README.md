@@ -28,6 +28,7 @@ The current repository requires that the **AVE pre-trained feature slices** be p
 |- models/AVE/         # AVE model definitions
 |- server/             # sync/async/hybrid servers and MMQS scheduling
 |- scripts/            # data preparation, API test, and experiment scripts
+|  `- data/build_ave_dataset.py  # optional raw-AVE to processed-AVE utility
 |- utils/              # shared utility helpers
 |- load_data.py        # multimodal data loading entry
 |- delays/             # delay profiles
@@ -82,6 +83,12 @@ data/ave/
 
 Default path used by this repository:
 - AVE index path: `./data/ave/index.json`
+
+### Optional Utility: `scripts/data/build_ave_dataset.py`
+
+This utility converts raw AVE videos plus official split files into the repository-ready multimodal format (`images/`, `audio/`, `texts/`, `index.json`) by extracting one representative frame, one audio segment, and one text record per sample.
+
+For reproducibility of the reported results, you can directly use the processed AVE release from the link above. In that case, you do **not** need to run this utility.
 
 Statistics of the processed AVE release used in this work:
 - Total samples: 4,143

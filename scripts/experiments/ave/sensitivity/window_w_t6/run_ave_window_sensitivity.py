@@ -71,6 +71,7 @@ def build_cmd(args, cfg_path, trial, w):
         "--mmqs_enabled",
         "--mmqs_weight_mode",
         "tot_api",
+        "--mmqs_loss_aware_topk_enabled",
         "--mmqs_W",
         str(int(w)),
         "--prefetch_enabled",
@@ -162,6 +163,7 @@ def main():
             cfg["federated_learning"]["epochs"] = int(args.epochs)
             cfg["federated_learning"]["batch_size"] = int(args.batch_size)
             cfg["federated_learning"]["target_accuracy"] = float(args.target_accuracy)
+            cfg["mmqs"]["loss_aware_topk_enabled"] = True
             cfg["mmqs"]["W"] = int(w)
 
             stem = "ave_window_tot_w{}_t{}".format(int(w), int(trial))

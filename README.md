@@ -182,6 +182,16 @@ python scripts/experiments/ave/main8/noniid_a1p0_c36_t6/run_ave_main8.py \
 
 This command requires ToTs API configuration; see Section 7.
 
+### Default Hyperparameters (Main AVE Runs)
+
+For main AVE runs (excluding sensitivity sweeps), the default settings are:
+
+- `mu = 1.5`: staleness decay exponent in polynomial staleness weighting.
+- `beta = 5`: loss-aware dynamic Top-K control strength.
+- `w = 10`: sliding window size (`mmqs_W`) used by loss-aware dynamic Top-K control.
+
+These defaults are used for the main configuration unless a sensitivity script explicitly overrides them.
+
 
 ## 7. ToTs API Configuration (Required for Full MMQS)
 

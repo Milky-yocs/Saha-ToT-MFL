@@ -108,7 +108,7 @@ In this project, **pretrained feature-based partitioning** means:
 3. Partition samples into federated clients using Dirichlet-based non-IID splitting.
 
 This is a **data preparation step**, not federated pretraining.
-Its purpose is to make training runs faster, more reproducible, and directly controllable in terms of non-IID strength and modality missingness.
+Training is performed on pre-extracted feature vectors rather than end-to-end raw image/audio/text encoders. Its purpose is to make training more reproducible and directly controllable in terms of non-IID strength and modality missingness. Since our work primarily focuses on scheduling algorithms, using pre-trained models for feature extraction is a reasonable and appropriate design choice.
 
 Expected index path:
 
@@ -165,6 +165,9 @@ data/ave_fed/noniid_a1p0_c36_pt_fast/
 |- test.json
 `- meta.json
 ```
+
+For sensitivity experiments, note that:
+The modality-missing experiments in this repository are conducted as controlled feature-level simulations on pre-extracted multimodal representations. Specifically, the `--missing_image`, `--missing_audio`, and `--missing_text` settings are applied in the pre-extracted feature space. These experiments are intended to evaluate the robustness of the proposed scheduling and aggregation mechanisms under representation-level modality missingness, rather than to reproduce end-to-end sensor acquisition failures, transmission corruption, or encoder-level abnormalities.
 ## 6. Main Running Commands
 
 Single-trial sanity check:
@@ -259,7 +262,7 @@ python scripts/test_tot_api.py \
 | `scripts/experiments/ave/sensitivity/mu_center1p0_t6/run_ave_mu_sensitivity.py` | Staleness `mu` sensitivity. |
 | `scripts/experiments/ave/sensitivity/window_w_t6/run_ave_window_sensitivity.py` | MMQS window sensitivity. |
 | `scripts/experiments/ave/sensitivity/kfit_beta_t6/run_ave_kfit_sensitivity.py` | Dynamic Top-K beta sensitivity. |
-| `scripts/experiments/ave/sensitivity/modality_missing_t6/run_ave_modality_missing_sensitivity.py` | Modality-missing sensitivity. |
+| `scripts/experiments/ave/sensitivity/modality_missing_t6/run_ave_modality_missing_sensitivity.py` | Modality-missing sensitivity (feature-level simulation). |
 | `scripts/experiments/ave/sensitivity/modal_6d_t6/run_ave_6d_modal_main8.py` | 6D modal ablation (`full` vs `wo_mc`). |
 
 ## 9. External Baseline Scope
